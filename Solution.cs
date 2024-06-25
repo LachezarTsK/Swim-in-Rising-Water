@@ -4,20 +4,8 @@ using System.Collections.Generic;
 
 public class Solution
 {
-    private struct Point
-    {
-        public readonly int row;
-        public readonly int column;
-        public readonly int waterLevel;
-
-        public Point(int row, int column, int waterLevel)
-        {
-            this.row = row;
-            this.column = column;
-            this.waterLevel = waterLevel;
-        }
-    };
-
+    private sealed record Point(int row, int column, int waterLevel) {}
+    
     private readonly int[][] moves = new int[4][]
     { new int[]{-1, 0}, new int[]{1, 0}, new int[]{0, -1}, new int[]{0, 1} };
 
